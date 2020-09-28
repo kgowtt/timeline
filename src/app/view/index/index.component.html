@@ -1,0 +1,92 @@
+<section class="searchBox">
+  <!-- <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="waves-light d-flex">
+      <input class="form-control w-100" type="text" placeholder="搜尋用戶名稱" formControlName="searchCont" >
+      <button type="submit" class="btn btn-primary search">搜尋</button>
+    </form> -->
+  <!-- <div>
+    <input class="form-control w-100" type="text" placeholder="用戶名稱" id="search-box" >
+  </div> -->
+  <div class="mat-form-box">
+    <mat-form-field class="example-form-field">
+      <mat-label>搜尋用戶名稱</mat-label>
+      <input matInput type="text" [(ngModel)]="formValue" (keydown.enter)="onMatSubmit()">
+      <button class="delete-btn" mat-button *ngIf="formValue" matSuffix mat-icon-button aria-label="Clear"
+        (click)="formValue=''">
+        <mat-icon class="i-delete" svgIcon="custom-svg:angular"></mat-icon>
+      </button>
+    </mat-form-field>
+    <button class="search" mat-raised-button color="primary" (click)="onMatSubmit()">搜尋</button>
+  </div>
+</section>
+<section class="intro">
+  <div class="container">
+    <h1>{{searchName}}</h1>
+  </div>
+
+  <div class="following-box" *ngIf="followingShow">
+    <h2 class="text-center">目前關注</h2>
+    <div class="swiper-use-box" *ngIf="userFollowingArr.length >0">
+      <div class="swiper-container" [swiper]='config'>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let item of userFollowingArr">
+            <div class="cont">
+              <div class="photo" [ngStyle]="{background: 'url(' + item.avatar_url + ')'}"></div>
+              <h3>{{item.login}}</h3>
+            </div>
+          </div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination-box">
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div *ngIf="userFollowingArr.length == 0">
+      <div class="text-center">
+        無
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="mt-2" *ngIf="generateShow">
+      <button type="button" class="btn btn-primary w-100 generateBtn" (click)="generate()">生成回購時間表</button>
+    </div>
+  </div>
+</section>
+<section class="timeline overflow-hidden" #secElement>
+  <ul *ngIf="timelineShow">
+    <li *ngFor="let item of userWarehouseArr">
+      <div>
+        <time>{{item.created_at | date:'yyyy/MM-dd' }}</time>
+        <mat-expansion-panel *ngIf="item.description != undefined ">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              詳細資訊
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{item.description}}</p>
+        </mat-expansion-panel>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+
+
+
+
+<!-- [disabled]="!userWarehouseArr" -->
+
+
+<!-- [ngModel]="searchCont" -->
+
+
+<!-- keyDownFunction( event , vaule: any): void {
+  if (event.keyCode === 13) {
+    this.update(vaule);
+  }
+} -->

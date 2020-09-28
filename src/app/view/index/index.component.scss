@@ -1,0 +1,337 @@
+$color-use: #ffa800;
+
+button{
+  border: 1px solid transparent;
+  outline: none;
+}
+.intro {
+  background: #ececec;
+  padding: 2rem 0px;
+  min-height: 250px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+
+/* TIMELINE –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline{
+  background: #333;
+  min-height: 100vh;
+}
+.timeline ul {
+  padding: 5rem 0;
+  margin: 0px;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #fff;
+}
+
+.timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+  background: $color-use;
+}
+
+.timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent $color-use transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+  left: -439px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent $color-use;
+}
+
+time {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #754d00;
+}
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+  transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: $color-use;
+}
+
+.timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent $color-use transparent transparent;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+.searchBox{
+  padding: 1rem;
+  background-color: #777;
+  input{
+    border-radius: 0px;
+  }
+  .btn.search{
+      width: 100px;
+      background-color: #333;
+      border-color: #333;
+      border-radius: 0px;
+  }
+
+  form{
+    flex-flow: row;
+  }
+}
+
+.overflow-hidden{
+  overflow:hidden;
+}
+
+.generateBtn{
+  border-radius: 0px;
+  padding:.7rem 0px;
+  background-color: #333;
+  border-color: #333;
+  outline:none;
+  &:hover{
+    background-color: #000!important;
+    border-color: #000!important;
+  }
+  &:focus{
+    outline: 0;
+  }
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle{
+    background-color: #000!important;
+    border-color: #000!important;
+  }
+}
+
+
+.swiper-use-box{
+  margin-bottom: 3.5rem;
+  position: relative;
+
+  .swiper-button-next , .swiper-button-prev{
+    color: #000;
+  }
+  .swiper-slide{
+    // padding:0px 1rem ;
+    .cont{
+      background-color: #fff;
+      padding: 2rem .75rem;
+      .photo{
+        width: 100%;
+        padding-top: 100%;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100%;
+        margin-bottom: 1rem;
+      }
+      h3{
+        word-break: break-all;
+        text-align: center;
+        overflow : hidden;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+      }
+    }
+  }
+  .swiper-pagination-box{
+    display: block;
+    width: 100%;
+    .swiper-pagination{
+      width: 100%;
+      bottom: -30px;
+
+      ::ng-deep .swiper-pagination-bullet{
+        margin: 0px 5px;
+      }
+      ::ng-deep .swiper-pagination-bullet.swiper-pagination-bullet-active{
+        background-color: #000;
+      }
+    }
+  }
+
+}
+
+
+
+:host ::ng-deep .mat-form-box{
+  display: flex;
+  .example-form-field{
+    width:100%;
+    margin-right: 20px;
+
+    .mat-form-field-wrapper{
+      padding:0px ;
+      // line
+      .mat-form-field-underline{
+        bottom: 0px;
+        background-color: #333;
+      }
+      .mat-form-field-label{
+        color: #fff;
+      }
+    }
+  }
+  button.search{
+    background-color: #333;
+    border-radius: 0px;
+    width: 100px;
+  }
+  ::ng-deep .delete-btn{
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;
+    outline: none;
+    .i-delete{
+      color: #333;
+    }
+  }
+  ::ng-deep .mat-focused {
+    .delete-btn{
+      .i-delete{
+        color: #fff;
+      }
+    }
+    .mat-form-field-underline .mat-form-field-ripple {
+      background-color: white;
+    }
+  }
+
+  ::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    color: #333;
+
+  }
+
+}
+
+
+
+.mat-expansion-panel{
+  border-radius: 0px;
+  text-shadow: none;
+  box-shadow:none;
+  background: #ffffff00;
+  color: #fff;
+  .mat-expansion-panel-header{
+    padding:0px 5px;
+    height: 36px;
+    .mat-expansion-panel-header-title{
+      color:#fff;
+    }
+    ::ng-deep .mat-expansion-indicator::after{
+      color:#fff;
+    }
+  }
+  ::ng-deep .mat-expansion-panel-body{
+    padding:10px;
+    background-color: #c38102;
+    p{
+      margin: 0px;
+    }
+
+  }
+}
