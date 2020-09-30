@@ -222,12 +222,3 @@ export class IndexComponent implements OnInit , AfterViewChecked{
 
 
 // octocat  &  abc
-
-// 分支創建0930
-// 修改
-
-
-// 修改修改修改修改修改修改修改修改修改修改
-// 修改修改修改修改修改修改修改修改修改修改
-// 修改修改修改修改修改修改修改修改修改修改
-// 修改修改修改修改修改修改修改修改修改修改
