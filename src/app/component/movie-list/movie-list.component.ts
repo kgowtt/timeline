@@ -27,7 +27,7 @@ const movies = [
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
-  @Input() showRotten:boolean;
+  @Input() showRotten: boolean;
   movies = movies;
 
   constructor() { }
@@ -36,5 +36,11 @@ export class MovieListComponent implements OnInit {
     console.log(this.movies)
     console.log(this.showRotten)
   }
+  toggleFormat(): void {
+    this.showRotten = !this.showRotten;
+  }
 
+  grtData(): void{
+    console.log(this.movies)
+  }
 }
