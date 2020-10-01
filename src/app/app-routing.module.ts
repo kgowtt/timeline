@@ -6,6 +6,11 @@ import {TestComponent} from './view/test/test.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/test.html',
+    pathMatch: 'full'
+  },
+  {
+    path: 'timeline.html',
     component: IndexComponent,
   },
   {

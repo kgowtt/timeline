@@ -14,6 +14,8 @@ import { TestComponent } from './view/test/test.component';
 import { MaterialPluginModule } from './module/material-plugin/material-plugin.module';
 import { AnimationPluginModule } from './module/animation-plugin/animation-plugin.module';
 import { WarningComponent } from './components/warning/warning.component';
+import { MovieListComponent } from './component/movie-list/movie-list.component';
+import { FreshPipe } from './pipe/fresh.pipe';
 
 
 
@@ -22,7 +24,9 @@ import { WarningComponent } from './components/warning/warning.component';
     AppComponent,
     IndexComponent,
     TestComponent,
-    WarningComponent
+    WarningComponent,
+    MovieListComponent,
+    FreshPipe
   ],
   imports: [
     BrowserModule,
@@ -39,3 +43,4 @@ import { WarningComponent } from './components/warning/warning.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
