@@ -11,7 +11,7 @@
     <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue" (ngModelChange)="idValue=$event"> -->
 
     <!-- 成功 -->
-    <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="transformFormat($event)">
+    <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="transformFormat($event)" (keyup)="onKey($event)">
     <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="transformFormat($event)" (click)="onClickFn(idV.value)" #idV> -->
     <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="idValue=$event"> -->
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">

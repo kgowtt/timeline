@@ -28,7 +28,7 @@ export class TestComponent implements OnInit {
     this.maskValue = 'A123456789';
   }
   onKey(value): void{
-
+    console.log(value)
   }
   grtData(): void{
     console.log('idValue=' + this.idValue);
@@ -42,6 +42,8 @@ export class TestComponent implements OnInit {
 
 
   transformFormat(inputVal): void{
+    console.log(inputVal);
+    this.idValue = inputVal;
   }
 
   onClickFn(value): void{
