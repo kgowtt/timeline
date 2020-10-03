@@ -16,21 +16,25 @@ export class TestComponent implements OnInit {
 
   idValue: string;
   hideValue: string;
+
+  testValue: string;
   ngOnInit(): void {
+    this.idValue = 'A123456789';
+    this.testValue = 'A123456789';
   }
   onKey(value): void{
-    this.idValue = value;
-    this.hideValue = this.plusXing(this.idValue, 4 , 3 );
-    console.log(this.idValue);
+    // this.idValue = value;
+    // this.hideValue = this.plusXing(this.idValue, 4 , 3 );
+    // console.log(this.idValue);
   }
-  plusXing(str: string, frontLen: number, endLen: number): string{
-    const len = str.length - frontLen - endLen;
-    let xing = '';
-    for (let i = 0; i < len; i ++) {
-      xing += '*';
-    }
-    return str.substring(0, frontLen) + xing + str.substring( str.length - endLen);
-  }
+  // plusXing(str: string, frontLen: number, endLen: number): string{
+  //   const len = str.length - frontLen - endLen;
+  //   let xing = '';
+  //   for (let i = 0; i < len; i ++) {
+  //     xing += '*';
+  //   }
+  //   return str.substring(0, frontLen) + xing + str.substring( str.length - endLen);
+  // }
 
   // psdFfun(): void{
   //   console.log(12321213)

@@ -33,14 +33,14 @@ export class MovieListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.movies)
-    console.log(this.showRotten)
+    // console.log(this.movies)
+    // console.log(this.showRotten)
   }
   toggleFormat(): void {
     this.showRotten = !this.showRotten;
   }
 
   grtData(): void{
-    console.log(this.movies)
+    // console.log(this.movies)
   }
 }

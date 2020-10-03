@@ -1,26 +1,38 @@
 <div>
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="idValue" (keyup)="onKey(idValue)" [value]="hideValue">
+    <!-- <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="idValue " (keyup)="onKey(idValue)" [value]="idValue | ellipsis:true" > -->
+
+    <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="idValue=$event">
+
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
-
-
+  <br>
+  <input [(ngModel)]="idValue" [value]="idValue">
+  {{idValue}}
 </div>
 
+<br>
+<br>
+<br>
+<h3>省略號</h3>
+<input [ngModel]="testValue | useMyPipeToFormatThatValue" (ngModelChange)="testValue=$event" name="inputField" type="text" [value]="testValue"/>
+{{testValue | useMyPipeToFormatThatValue}}
+<br>
+<br>
+<br>
 
 <div>
-  <!-- [(ngModel)]="idValue" -->
   <!-- <input [(ngModel)]="idValue" (keyup)="onKey(idValue)"> -->
-
   <!-- <input #box (keyup)="onKey(box.value)"> -->
 </div>
 
 
 
 <hr>
-<app-movie-list
-  [showRotten]="true"
-></app-movie-list>
+<app-movie-list [showRotten]="true"></app-movie-list>
+
+
+<!-- https://stackoverflow.com/questions/39642882/using-pipes-within-ngmodel-on-input-elements-in-angular -->

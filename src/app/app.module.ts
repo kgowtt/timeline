@@ -16,6 +16,8 @@ import { AnimationPluginModule } from './module/animation-plugin/animation-plugi
 import { WarningComponent } from './components/warning/warning.component';
 import { MovieListComponent } from './component/movie-list/movie-list.component';
 import { FreshPipe } from './pipe/fresh.pipe';
+import { EllipsisPipe } from './pipe/ellipsis.pipe';
+import { UseMyPipeToFormatThatValuePipe } from './pipe/use-my-pipe-to-format-that-value.pipe';
 
 
 
@@ -26,7 +28,9 @@ import { FreshPipe } from './pipe/fresh.pipe';
     TestComponent,
     WarningComponent,
     MovieListComponent,
-    FreshPipe
+    FreshPipe,
+    EllipsisPipe,
+    UseMyPipeToFormatThatValuePipe
   ],
   imports: [
     BrowserModule,
