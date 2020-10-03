@@ -11,8 +11,9 @@
     <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue" (ngModelChange)="idValue=$event"> -->
 
     <!-- 成功 -->
-    <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="idValue=$event" (click)="onClickEvent($event)">
-
+    <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="transformFormat($event)">
+    <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="transformFormat($event)" (click)="onClickFn(idV.value)" #idV> -->
+    <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="idValue=$event"> -->
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
@@ -37,6 +38,8 @@
 <h3>省略號</h3>
 <input [ngModel]="testValue | useMyPipeToFormatThatValue" (ngModelChange)="testValue=$event" name="inputField" type="text" [value]="testValue"/>
 {{testValue | useMyPipeToFormatThatValue}}
+<button (click)="grtData()">Get ID</button>
+
 <br>
 <br>
 <br>
@@ -50,6 +53,12 @@
 
 <hr>
 <app-movie-list [showRotten]="true"></app-movie-list>
+<hr>
+
+<input [hiddenInput]="true" mask="A000XXX000" [(ngModel)]="maskValue">
+<button (click)="grtMaskValue()">Get ID</button>
+<hr>
+
 
 <!-- Using Pipes within ngModel on INPUT Elements in Angular -->
 <!-- https://stackoverflow.com/questions/39642882/using-pipes-within-ngmodel-on-input-elements-in-angular -->

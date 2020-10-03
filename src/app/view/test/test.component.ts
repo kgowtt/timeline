@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
 
+
   hide = false;
   xing = '';
   constructor() { }
@@ -19,17 +20,19 @@ export class TestComponent implements OnInit {
   hideValue: string;
 
   testValue: string;
+
+  maskValue: string;
   ngOnInit(): void {
     this.idValue = 'A123456789';
     this.testValue = 'A123456789';
-
-
+    this.maskValue = 'A123456789';
   }
   onKey(value): void{
 
   }
   grtData(): void{
-    console.log(this.idValue);
+    console.log('idValue=' + this.idValue);
+    console.log('testValue=' + this.testValue);
   }
 
   changText(inputVaule: any): void{
@@ -38,8 +41,14 @@ export class TestComponent implements OnInit {
   }
 
 
+  transformFormat(inputVal): void{
+  }
 
-  onClickEvent($event): void{
-    console.log(this.idValue)
+  onClickFn(value): void{
+    console.log(value);
+  }
+
+  grtMaskValue(): void{
+    console.log(this.maskValue)
   }
 }

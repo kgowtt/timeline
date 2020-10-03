@@ -20,6 +20,9 @@ import { EllipsisPipe } from './pipe/ellipsis.pipe';
 import { UseMyPipeToFormatThatValuePipe } from './pipe/use-my-pipe-to-format-that-value.pipe';
 
 
+// ng-mask
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ToStrPipePipe } from './pipe/to-str-pipe.pipe'
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { UseMyPipeToFormatThatValuePipe } from './pipe/use-my-pipe-to-format-tha
     MovieListComponent,
     FreshPipe,
     EllipsisPipe,
-    UseMyPipeToFormatThatValuePipe
+    UseMyPipeToFormatThatValuePipe,
+    ToStrPipePipe
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { UseMyPipeToFormatThatValuePipe } from './pipe/use-my-pipe-to-format-tha
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialPluginModule,
-    AnimationPluginModule
+    AnimationPluginModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
