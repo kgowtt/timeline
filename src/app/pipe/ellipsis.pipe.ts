@@ -7,9 +7,11 @@ export class EllipsisPipe implements PipeTransform {
 
   transform(value: any, args?: any[]): any {
 
-    value =  this.plusXing(value, 4 , 3 );
-    // console.log(value)
-    return value;
+    console.log(value);
+
+    let newValue;
+    newValue =  this.plusXing(value, 4 , 3 );
+    return newValue;
 
   }
 

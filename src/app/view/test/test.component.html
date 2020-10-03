@@ -2,17 +2,34 @@
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
     <!-- <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="idValue " (keyup)="onKey(idValue)" [value]="idValue | ellipsis:true" > -->
+    <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (keyup)="changText($event)"> -->
+    <!-- <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="idValue" [value]="idValue | ellipsis"> -->
 
-    <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="idValue=$event">
+
+    <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="idValue=$event"> -->
+
+    <!-- <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue" (ngModelChange)="idValue=$event"> -->
+
+    <!-- 成功 -->
+    <input matInput [type]="hide ? 'password' : 'text'" [ngModel]="idValue | ellipsis" [value]="idValue" (ngModelChange)="idValue=$event" (click)="onClickEvent($event)">
 
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
+  <button (click)="grtData()">Get ID</button>
+  <br>
+
+  <hr>
+  <br>
   <br>
   <input [(ngModel)]="idValue" [value]="idValue">
   {{idValue}}
+
+
 </div>
+
+
 
 <br>
 <br>
@@ -34,5 +51,9 @@
 <hr>
 <app-movie-list [showRotten]="true"></app-movie-list>
 
-
+<!-- Using Pipes within ngModel on INPUT Elements in Angular -->
 <!-- https://stackoverflow.com/questions/39642882/using-pipes-within-ngmodel-on-input-elements-in-angular -->
+
+
+
+<!-- https://medium.com/@shangweitsai/angular-%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BD%BF%E7%94%A8ngmodel%E7%9A%84input%E5%85%A7%E8%BC%B8%E5%85%A5%E6%A1%86%E5%80%BC-%E5%90%8C%E6%99%82%E4%BF%9D%E6%8C%81model%E5%80%BC%E4%B8%8D%E8%AE%8A-3cb0150fed70 -->

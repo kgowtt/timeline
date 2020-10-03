@@ -43,4 +43,5 @@ export class MovieListComponent implements OnInit {
   grtData(): void{
     // console.log(this.movies)
   }
+
 }

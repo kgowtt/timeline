@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
+
   hide = false;
   xing = '';
   constructor() { }
@@ -21,24 +22,24 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
     this.idValue = 'A123456789';
     this.testValue = 'A123456789';
+
+
   }
   onKey(value): void{
-    // this.idValue = value;
-    // this.hideValue = this.plusXing(this.idValue, 4 , 3 );
-    // console.log(this.idValue);
+
   }
-  // plusXing(str: string, frontLen: number, endLen: number): string{
-  //   const len = str.length - frontLen - endLen;
-  //   let xing = '';
-  //   for (let i = 0; i < len; i ++) {
-  //     xing += '*';
-  //   }
-  //   return str.substring(0, frontLen) + xing + str.substring( str.length - endLen);
-  // }
+  grtData(): void{
+    console.log(this.idValue);
+  }
 
-  // psdFfun(): void{
-  //   console.log(12321213)
-  // }
+  changText(inputVaule: any): void{
+    console.log(this.idValue)
+    console.log(inputVaule)
+  }
 
 
+
+  onClickEvent($event): void{
+    console.log(this.idValue)
+  }
 }
